@@ -1,1 +1,37 @@
-project 1
+//import scanner 
+import java.util.Scanner; 
+import java.lang.Math;
+  //open main method 
+class Main {
+  public static void main(String[] args) {
+ //declare variables with datatypes
+String movie;
+int adults;
+int children;
+float gross;
+Double net;
+Double paid;
+double netrounded;
+  //call input class?
+Scanner input = new Scanner(System.in);
+  //ask for movie name 
+System.out.print("Enter name of the movie: ");
+  //save to input 
+movie=input.nextLine();
+  //ask how many adults- $10.00
+System.out.print("How many adult tickets were sold?: ");
+  //save to input
+adults=input.nextInt();
+  //ask how many child tickets-$6.00
+System.out.print("How many children's tickets were sold?: ");
+  //save to input
+children=input.nextInt();
+ // calculations 
+gross=adults*10 + children*6;
+net=gross*0.20;
+netrounded= Math.round(net*100)/100;
+paid=gross-net;
+ //output
+System.out.print("Movie Name:                  " + movie + "\n" + "Adult Tickets Sold:          " + adults + "\n" + "Child Tickets Sold:          " + children + "\n" + "Gross Box Office Profit:     $" + gross + "\n" + "Net Box Office Profit:       $" + netrounded + "\n" + "Amount Paid To Distributor:  $"+paid);
+  }
+}
